@@ -41,6 +41,7 @@ export class DexListComponent {
   }
 
 
+
   setListSize(listSize: number) {
     this.router.navigate([], {
       queryParams: { listSize },

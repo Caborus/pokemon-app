@@ -101,8 +101,27 @@ h1{
         }
     }
 }
-
-.data{
+.data1{
+    display: block;
+    position:relative;
+    left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    max-width: 500px;
+    .statblock{
+        background-color: #37474f;
+        border-style: ridge;
+        padding: 15px;
+        border-color: white;
+        border-width: 5px;
+        border-radius: 15px;
+        .statval{
+            width: 100%;
+        }
+    }
+}
+.data2{
     display: block;
     position:relative;
     left: 15px;
@@ -111,6 +130,22 @@ h1{
     font-size: 20px;
     max-width: 500px;
 
+    .appear{
+        background-color: #37474f;
+        border-style: ridge;
+        padding: 15px;
+        border-color: white;
+        border-width: 5px;
+        border-radius: 15px;
+    }
+    .exp{
+        background-color: #37474f;
+        border-style: ridge;
+        padding: 15px;
+        border-color: white;
+        border-width: 5px;
+        border-radius: 15px;
+    }
     .pheight{
         background-color: #37474f;
         border-style: ridge;
@@ -137,5 +172,50 @@ h1{
         .phead{
             margin-bottom: 7px;
         }
+    }
+}
+
+.data3{
+    display: block;
+    position:relative;
+    left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    max-width: 500px;
+
+    .appear{
+        background-color: #37474f;
+        padding-left: 15px;
+        padding-bottom: 15px;
+        border-style: ridge;
+        border-color: white;
+        border-width: 5px;
+        border-radius: 15px;
+        width:250px;
+        
+        .appearT{
+            padding-bottom: 5px;
+        }
+        .appearB{
+            padding-bottom: 7px;
+        }
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .data2{
+        position:relative;
+        margin-left:520px;
+        margin-top: -717px;
+        margin-bottom:500px;
+    }
+}
+@media screen and (min-width:1400px){
+    .data3{
+        position:relative;
+        margin-left:1050px;
+        margin-top: -857px;
+        margin-bottom: 400px;
     }
 }
