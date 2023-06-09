@@ -2,7 +2,6 @@
     All PokeMon
 </h1>
 
-
 <body class="dex">
     <div class="list" *ngFor="let pokemon of pokemon$ | async" >
         <button class="listB" routerLink="/{{pokemon.name}}">

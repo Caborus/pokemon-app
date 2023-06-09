@@ -4,32 +4,28 @@ h1{
     font-size: 26px;
 }
 
-
 .dex{
-    columns: 4;
     background: none;
-    padding-right:30px;
     display:table-row;
     
 
     .list{
         display:list-item;
-        padding-left: 15px;
-        padding-bottom: 30px;
-        margin-top: 15px;
         color:#37474f;
-        width: 500px;
+        min-width: 300px;
         padding-top: 10px;
+        padding-left: 20px;
         float:left;
+        width: 95%;
     
         .listB{
             font-family: 'Press Start 2P', cursive;
+            height: 70px;
             border-radius: 20px;
             border-color: #37474f;
             border-width: 5px;
             font-size: 20px;
             color:#37474f;
-            padding: 10px;
             width: 100%;
         }
     }
@@ -41,7 +37,8 @@ h1{
     padding-top: 20px;
     display: block;
     font-family: 'Press Start 2P', cursive;
-    position: relative; left: 25%;
+    position:relative; 
+
     .pageNum{
         color: white;
         display: inline-block;
@@ -75,6 +72,89 @@ h1{
     }
 
 }
+
+
+
+@media screen and (max-width: 500px) {
+    h1{
+        font-size: 20px;
+        position:absolute; top:105px; left:188px;
+    }
+    .nav{
+        margin-left:5%;
+        .pageNum{
+            font-size: 0px;
+        }.navB{
+            margin-left: 10%;
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .pageNum{
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 500px) {
+    
+    .dex{
+        columns: 1;
+    }
+    .nav{
+        margin-left:10%;
+    }
+}
+@media screen and (min-width: 700px) {
+    
+    .dex{
+        columns: 2;
+        .list{
+            width: 45%;
+        }
+    }
+    .nav{
+        margin-left:15%;
+    }
+}
+@media screen and (min-width: 1000px) {
+    
+    .dex{
+        columns: 3;
+        .list{
+            width: 30%;
+        }
+    }
+    .nav{
+        margin-left:20%;
+    }
+    
+}
+
+@media screen and (min-width: 1300px) {
+    
+    .dex{
+        columns: 4;
+        .list{
+            width: 25%;
+        }
+    }
+    .nav{
+        margin-left:25%;
+    }
+}
+@media screen and (min-width: 1500px) {
+    
+    .dex{
+        columns: 5;
+        .list{
+            width: 18%;
+        }
+    }
+    .nav{
+        margin-left:35%;
+    }
+}
+
+
 
 .sel{
     padding-top: 30px;
