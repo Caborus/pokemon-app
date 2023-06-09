@@ -15,10 +15,22 @@ export class DexListComponent {
   public pokemon$: Observable<Pokemon[]>;
   public listSize$: Observable<number>;
   public pageOffset$ : Observable<number>;
+  public pokeFilter$ : Observable<Pokemon[]>;
   public count : number = 0;
   public offset : number = 0;
   public size : number = 20;
 
+
+  filterResults(text: string) {
+    console.log(text)
+    this.pokeFilter$ = this.pokemon$.pipe(map(p =>
+      p.filter(po => {
+        if (!text)
+          return true;
+        return po.name!.toLowerCase().includes(text.toLowerCase())
+      })
+    ));
+  }
   constructor(
     public pokemonService: PokemonService,
     public route: ActivatedRoute,
@@ -38,6 +50,8 @@ export class DexListComponent {
     this.results$.pipe(map(res => res.count)).subscribe(response => {
       this.count = response
     })
+
+    this.pokeFilter$ = this.pokemon$;
   }
 
 
@@ -78,5 +92,6 @@ export class DexListComponent {
     if(name == null) return
     return this.pokemonService.getPokemon(name).subscribe(mon => mon);
   }
+
 
 }

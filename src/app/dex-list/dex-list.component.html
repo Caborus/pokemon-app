@@ -1,9 +1,10 @@
 <h1>
     All PokeMon
 </h1>
+<input #searchbar type="search" (change)="filterResults(searchbar.value)">
 
 <body class="dex">
-    <div class="list" *ngFor="let pokemon of pokemon$ | async" >
+    <div class="list" *ngFor="let pokemon of pokeFilter$ | async" >
         <button class="listB" routerLink="/{{pokemon.name}}">
             <a>
                 <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png"> -->
