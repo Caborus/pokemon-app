@@ -16,9 +16,35 @@ export class DexListComponent {
   public listSize$: Observable<number>;
   public pageOffset$ : Observable<number>;
   public pokeFilter$ : Observable<Pokemon[]>;
+  public pokeFull$ : Observable<Pokemon[]>;
   public count : number = 0;
   public offset : number = 0;
   public size : number = 20;
+
+
+
+  constructor(
+    public pokemonService: PokemonService,
+    public route: ActivatedRoute,
+    public router: Router
+  ) {
+
+    this.listSize$ = route.queryParams.pipe(map(qp => qp['listSize'] || 20))
+    this.pageOffset$ = route.queryParams.pipe(map(qp => qp['pageOffset'] || 0))
+
+    this.results$ = route.queryParams
+      .pipe(
+        concatMap(qp => this.pokemonService.listPokemon(qp['offset'], qp['listSize']))
+      )
+    
+    this.pokemon$ = this.results$.pipe(map((res => res.results)))
+    this.results$.pipe(map(res => res.count)).subscribe(response => {
+      this.count = response
+    })
+    this.pokeFull$ = this.pokemonService.listAll().pipe(map(res => res.results))
+
+    this.pokeFilter$ = this.pokeFull$;
+  }
 
 
   filterResults(text: string) {
@@ -31,30 +57,6 @@ export class DexListComponent {
       })
     ));
   }
-  constructor(
-    public pokemonService: PokemonService,
-    public route: ActivatedRoute,
-    public router: Router
-  ) {
-
-    this.listSize$ = route.queryParams.pipe(map(qp => qp['listSize'] || 20))
-    this.pageOffset$ = route.queryParams.pipe(map(qp => qp['pageOffset'] || 0))
-
-
-    this.results$ = route.queryParams
-      .pipe(
-        concatMap(qp => this.pokemonService.listPokemon(qp['offset'], qp['listSize']))
-      )
-    
-    this.pokemon$ = this.results$.pipe(map((res => res.results)))
-    this.results$.pipe(map(res => res.count)).subscribe(response => {
-      this.count = response
-    })
-
-    this.pokeFilter$ = this.pokemon$;
-  }
-
-
 
   setListSize(listSize: number) {
     this.router.navigate([], {

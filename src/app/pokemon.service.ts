@@ -14,7 +14,9 @@ export class PokemonService {
 
   constructor(private http : HttpClient) { }
 
-
+  public listAll() {
+    return this.http.get<listApiRes>(`${this.url}pokemon`)
+  }
 
   public listPokemon(pageOffset = 0, listSize = 20) {
     const params = {limit : listSize, offset : pageOffset}
