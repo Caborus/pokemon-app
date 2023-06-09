@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-image: url('/assets/background.png');
+    background-repeat: repeat-x;
+    background-size: 2130px;
+    background-position-x: -4px;
+    background-repeat: repeat-x;
+    background-color: #F73904;
+    color: #37474f;
+    font-family: 'Press Start 2P', cursive;
+}
+footer{
+    background-color:#37474f;
+    color: white;
+    position:relative;
+    margin-top: 30px;
+    padding: 40px;
+    font-size: 15px;
+    
+    text-align: center;
+}
+@media screen and (max-width = 725px) {
+    footer{
+        font-size: 5px;
+    }
+}

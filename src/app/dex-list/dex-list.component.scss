@@ -1,0 +1,101 @@
+h1{
+    color:white;
+    position:absolute; top:102px; left:188px;
+    font-size: 26px;
+}
+
+
+.dex{
+    columns: 4;
+    background: none;
+    padding-right:30px;
+    display:table-row;
+    
+
+    .list{
+        display:list-item;
+        padding-left: 15px;
+        padding-bottom: 30px;
+        margin-top: 15px;
+        color:#37474f;
+        width: 500px;
+        padding-top: 10px;
+        float:left;
+    
+        .listB{
+            font-family: 'Press Start 2P', cursive;
+            border-radius: 20px;
+            border-color: #37474f;
+            border-width: 5px;
+            font-size: 20px;
+            color:#37474f;
+            padding: 10px;
+            width: 100%;
+        }
+    }
+}
+
+
+
+.nav{
+    padding-top: 20px;
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+    position: relative; left: 25%;
+    .pageNum{
+        color: white;
+        display: inline-block;
+        font-family: 'Press Start 2P', cursive;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 8px;
+        padding-bottom: 5px;
+    }
+    .navA{
+        display: inline-block;
+        font-family: 'Press Start 2P', cursive;
+        padding-right: 10px;
+        padding-top: 6px;
+        padding-bottom: 5px;
+        border-radius: 15px;
+        border-width: 3px;
+        border-color: #37474f;
+        background-color: #cfd7db;
+    }
+    .navB{
+        display: inline-block;
+        font-family: 'Press Start 2P', cursive;
+        padding-left: 10px;
+        padding-top: 6px;
+        padding-bottom: 5px;
+        border-radius: 15px;
+        border-width: 3px;
+        border-color: #37474f;
+        background-color: #cfd7db;
+    }
+
+}
+
+.sel{
+    padding-top: 30px;
+    display: block;
+    
+    color:white; 
+    font-family: 'Press Start 2P', cursive;
+
+    select{
+        font-family: 'Press Start 2P', cursive;
+        padding-left: 3px;
+        padding-right: 5px;
+        padding-top: 6px;
+        padding-bottom: 5px;
+        border-radius: 15px;
+        border-width: 3px;
+        border-color: #37474f;
+        color: #37474f;
+        background-color: #cfd7db;
+}
+
+position: relative;
+
+}

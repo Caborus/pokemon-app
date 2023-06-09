@@ -1,0 +1,141 @@
+h1{
+    color:white;
+    position:absolute; top:102px; left:188px;
+    font-size: 26px;
+}
+
+
+
+.details{
+    color:white;
+    font-size: 25px;
+}
+
+.sprite{
+    display: block;
+    margin-top: 10px;
+    width:530px;
+    height:390px;
+    background-image: url(../../assets/display.png);
+    background-position-x: -60px;
+    background-position-y: -25px;
+    background-size:auto;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    button{
+        background: none;
+        margin-top: -7px;
+        margin-left:110px;
+        width: 315px;
+        height: 285px;
+        
+        
+        .normal{
+            padding:0px;
+            margin-left:-25px;
+            margin-top:-20px;
+            width: 120%;
+            height: 120%;
+        }
+        
+        .shiny{
+            border-width: 90px;
+            padding:0px;
+            margin-left:-25px;
+            margin-top:-21px;
+            width: 120%;
+            height: 120%;
+            background-image: url(../../assets/sparkle.png);
+            background-size:35%;
+            background-position-x: 205px;
+            background-position-y: 20px;
+            background-repeat: no-repeat;
+        }
+
+    }
+    .normText{
+        margin-left: 250px;
+        padding-top: 22px;
+        padding-bottom: 30px;
+        font-size: 18px;
+        height: 10px;
+    }
+    .shinyText{
+        margin-left: 260px;
+        padding-top: 22px;
+        padding-bottom: 30px;
+        font-size: 18px;
+        height: 10px;
+    }
+    .noShinyText{
+        margin-left: 179px;
+        padding-top: 23px;
+        padding-bottom: 30px;
+        font-size: 17px;
+        height: 10px;
+    }
+    
+    .types{
+        margin-left:  35px;
+        margin-top: -202px;
+
+        margin-right: -10px;
+        .type1{
+            border-image: auto;
+            border-radius: 100%;
+            border-style: groove;
+            border-width: 5px;
+            border-color:black;
+            margin-top: -50px;
+            margin-bottom: 150px;
+            width: 40px;
+        }
+        .type2{
+            border-image: auto;
+            border-radius: 100%;
+            border-style:groove;
+            border-width: 5px;
+            border-color:black;
+            margin-top: 110px;
+            width: 40px;
+        }
+    }
+}
+
+.data{
+    display: block;
+    position:relative;
+    left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    max-width: 500px;
+
+    .pheight{
+        background-color: #37474f;
+        border-style: ridge;
+        padding: 15px;
+        border-color: white;
+        border-width: 5px;
+        border-radius: 15px;
+    }
+    .pweight{
+        background-color:#37474f;
+        padding: 15px;
+        border-style: ridge;
+        border-color: white;
+        border-width: 5px;
+        border-radius: 15px;
+    }
+    .pabilities{
+        background-color: #37474f;
+        padding: 20px;
+        border-style: ridge;
+        border-color: white;
+        border-width: 5px;
+        border-radius: 15px;
+        .phead{
+            margin-bottom: 7px;
+        }
+    }
+}

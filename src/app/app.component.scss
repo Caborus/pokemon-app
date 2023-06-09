@@ -1,0 +1,33 @@
+$red-color: #ff0000;
+$white-color: #ffffff;
+
+
+
+header {
+    display: table;
+    padding-top: 31px;
+    padding-left: 20px;
+  
+}
+
+a{
+    display: table-cell;
+    width: 200px;
+    font-size: 27px;
+    vertical-align: middle;
+    padding-bottom: 35px;
+    padding-left: 15px;
+}
+
+button{
+    background-image: url('../assets/pokeball.png');
+    background-size: 137%;
+    background-position-x: -26px;
+    background-position-y: -25px;
+    height:145px;
+    width:145px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 100px;
+    border-width: 5px;
+  }
