@@ -6,17 +6,17 @@
         <div class="sprite">
             <div *ngIf="!toggleSwitch">
                 <div class="normText">NORMAL</div>
-                <button type="button" (click)="toggleSwitch = true"><img src="{{pokemon.sprites?.front_default}}"
+                <button type="button" (click)="toggleSwitch = true"><img src="{{pokemon.sprite?.front_default}}"
                         class="normal" /></button>
             </div>
-            <div *ngIf="toggleSwitch && this.checkValidImage(pokemon.sprites?.front_shiny)">
+            <div *ngIf="toggleSwitch && this.checkValidImage(pokemon.sprite?.shiny)">
                 <div class="shinyText">SHINY</div>
-                <button type="button" (click)="toggleSwitch = false"><img src="{{pokemon.sprites?.front_shiny}}"
+                <button type="button" (click)="toggleSwitch = false"><img src="{{pokemon.sprite?.shiny}}"
                         alt="{{pokemon.sprites?.front_default}}" class="shiny" /></button>
             </div>
-            <div *ngIf="toggleSwitch && !this.checkValidImage(pokemon.sprites?.front_shiny)">
+            <div *ngIf="toggleSwitch && !this.checkValidImage(pokemon.sprite?.shiny)">
                 <div class="noShinyText">NO SHINY SPRITE</div>
-                <button type="button" (click)="toggleSwitch = false"><img src="{{pokemon.sprites?.front_default}}"
+                <button type="button" (click)="toggleSwitch = false"><img src="{{pokemon.sprite?.normal}}"
                         class="shiny" /></button>
             </div>
             <div class="types" *ngFor="let poketype of pokemon.types">
@@ -27,16 +27,16 @@
             </div>
         </div>
         <div class="data1">
-            <div class="statblock">
+            <!-- <div class="statblock">
                 <div *ngFor="let stats of pokemon.stats">
                     <div class="stattitle">{{stats.stat?.name}}</div><progress class="statval"
                         value="{{stats.base_stat}}" max="255"></progress>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="data2">
-            
-            <p class="exp">
+
+            <!-- <p class="exp">
                 BASE EXP: {{pokemon.base_experience}}
             </p>
             <p class="pheight">
@@ -57,7 +57,7 @@
                         * &nbsp;{{pokeabilities.ability?.name}}
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="data3">
             <div class="appear">

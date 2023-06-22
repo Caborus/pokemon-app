@@ -14,7 +14,7 @@ import { DexListComponent } from '../dex-list/dex-list.component';
 export class PokemonDetailComponent {
 
   public name$ : Observable<string>
-  public pokemon$ : Observable<Pokemon>
+  public pokemon$ : Observable<any>
   public toggleSwitch = false;
 
   constructor( 

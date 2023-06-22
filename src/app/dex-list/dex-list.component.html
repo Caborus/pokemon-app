@@ -6,7 +6,7 @@
 <button type="button" class="searchshow"></button>
 <input #searchbar class="sbar" type="search" placeholder="search..." (search)="filterResults(searchbar.value)">
 <select name="searchresults">
-    <div *ngFor="let smon of pokeFilter$ | async">
+    <div *ngFor="let smon of pokemon$ | async">
         <option routerLink="/{{smon.name}}">{{smon.name}}</option>
     </div>
 </select>
@@ -14,7 +14,6 @@
     <div class="list" *ngFor="let pokemon of pokemon$ | async" >
         <button class="listB" routerLink="/{{pokemon.name}}">
             <a>
-                <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png"> -->
                 {{pokemon.name}}
             </a>
         </button>

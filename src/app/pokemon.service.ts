@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { count, map, of, tap } from 'rxjs';
-import { Pokemon } from './models/pokemon';
+//import { Pokemon } from './models/Pokemon';
 import { HttpClient } from '@angular/common/http'
 import { listApiRes } from './models/list-api-response';
 
@@ -10,22 +10,20 @@ import { listApiRes } from './models/list-api-response';
 
 export class PokemonService {
 
-  private url = 'https://pokeapi.co/api/v2/'
+  private url = 'https://localhost:7007/'
 
   constructor(private http : HttpClient) { }
 
   public listAll() {
-    return this.http.get<listApiRes>(`${this.url}pokemon`)
+    return this.http.get<any>(`${this.url}Pokemon`)
   }
 
-  public listPokemon(pageOffset = 0, listSize = 20) {
-    const params = {limit : listSize, offset : pageOffset}
-    return this.http.get<listApiRes>(`${this.url}pokemon`, {params : params})
+  public listPokemon() {
+    return this.http.get<any>(`${this.url}Pokemon`)
   }
 
   public getPokemon(name: string) {
-    name = name.toLowerCase()
-    return this.http.get<Pokemon>(`${this.url}pokemon/${name}`)
+    return this.http.get<any>(`${this.url}Pokemon/${name}`)
   }
 
 }

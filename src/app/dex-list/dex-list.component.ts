@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { PokemonService } from '../pokemon.service';
 import { Observable, concatMap, merge, tap, map, count } from 'rxjs';
-import { Pokemon } from '../models/pokemon';
+//import { Pokemon } from '../models/Pokemon';
 import { ActivatedRoute, Router } from '@angular/router';
 import { listApiRes } from '../models/list-api-response';
 
@@ -11,12 +11,12 @@ import { listApiRes } from '../models/list-api-response';
   styleUrls: ['./dex-list.component.scss']
 })
 export class DexListComponent {
-  public results$ : Observable<listApiRes>
-  public pokemon$: Observable<Pokemon[]>;
+  //public results$ : Observable<listApiRes>
+  public pokemon$: Observable<any>;
   public listSize$: Observable<number>;
   public pageOffset$ : Observable<number>;
-  public pokeFilter$ : Observable<Pokemon[]>;
-  public pokeFull$ : Observable<Pokemon[]>;
+  //public pokeFilter$ : Observable<Pokemon[]>;
+  //public pokeFull$ : Observable<Pokemon[]>;
   public count : number = 0;
   public offset : number = 0;
   public size : number = 20;
@@ -32,30 +32,30 @@ export class DexListComponent {
     this.listSize$ = route.queryParams.pipe(map(qp => qp['listSize'] || 20))
     this.pageOffset$ = route.queryParams.pipe(map(qp => qp['pageOffset'] || 0))
 
-    this.results$ = route.queryParams
-      .pipe(
-        concatMap(qp => this.pokemonService.listPokemon(qp['offset'], qp['listSize']))
-      )
+    // this.results$ = route.queryParams
+    //   .pipe(
+    //     concatMap(qp => this.pokemonService.listPokemon(qp['offset'], qp['listSize']))
+    //   )
     
-    this.pokemon$ = this.results$.pipe(map((res => res.results)))
-    this.results$.pipe(map(res => res.count)).subscribe(response => {
-      this.count = response
-    })
-    this.pokeFull$ = this.pokemonService.listAll().pipe(map(res => res.results))
+    this.pokemon$ = this.pokemonService.listAll();
+    // this.results$.pipe(map(res => res.count)).subscribe(response => {
+    //   this.count = response
+    // })
+    // this.pokeFull$ = this.pokemonService.listAll().pipe(map(res => res.results))
 
-    this.pokeFilter$ = this.pokeFull$;
+    // this.pokeFilter$ = this.pokeFull$;
   }
 
 
   filterResults(text: string) {
-    console.log(text)
-    this.pokeFilter$ = this.pokemon$.pipe(map(p =>
-      p.filter(po => {
-        if (!text)
-          return true;
-        return po.name!.toLowerCase().includes(text.toLowerCase())
-      })
-    ));
+    // console.log(text)
+    // this.pokeFilter$ = this.pokemon$.pipe(map(p =>
+    //   p.filter(po => {
+    //     if (!text)
+    //       return true;
+    //     return po.name!.toLowerCase().includes(text.toLowerCase())
+    //   })
+    // ));
   }
 
   setListSize(listSize: number) {
