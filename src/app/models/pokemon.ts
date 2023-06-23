@@ -18,7 +18,6 @@ export class Pokemon{
     moves? : {move? : {name? : string, url? : string}}[];
     name? : string;
     order? : number;
-    past_types? : [];
     species? : {name? : string, url? : string};
     sprites? : { 
         back_default?: string, 
@@ -30,7 +29,12 @@ export class Pokemon{
         front_shiny? : string,
         front_shiny_female? : string
     };
-    stats? : { base_stat? : number, effort? : number, stat? : {name? : string, url? : string}}[];
-    types? : {slot? : number, type? : {name? : string, url? : string}}[]
+    stats? : { 
+        base_stat? : number, 
+        effort? : number, 
+        stat? : {name? : string, url? : string}}[];
+    types? : {
+        slot? : number, 
+        type? : {name? : string, url? : string}}[]
     weight? : number
 }
